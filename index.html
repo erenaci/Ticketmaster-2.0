@@ -39,9 +39,25 @@
                 document.write(city);
                 loadData(city); 
             }
-            
-           
         }
+        
+        // function show_searches() {
+        //     var request = new XMLHttpRequest();
+        //     request.open("GET", "app.js");
+        //     request.onreadystatechange= function(){
+        //         if(request.readyState == 4 && request.status ==200){
+        //             var result = request.response; 
+        //             result_array = JSON.parse(result);
+        //             /*data for names of events are an located in an array of objects called events. each object has key "name" with value artist name*/
+        // 
+        //             document.getElementById("data").innerHTML = result_array; 
+        // 
+        //         }else if (request.readyState == 4 && request.status!= 200){
+        //             document.getElementById("data").innerHTML="Error"; 
+        //         }
+        //     }
+        //     request.send();
+        // }
     
     </script>
     
@@ -60,17 +76,20 @@
     <div id="data" style="text-align: center;">Loading...</div>
     
     <div id="searchHome">
-    <form>
+    <form method = "POST" action = "/submit-form">
       <select name="menu">
-          <option value="select" selected>Select</option>
-          <option value="artist">Artist</option>
-          <option value="genre">Genre</option>
-          <option value="city">City</option>
+          <option value= "0" selected>Select</option>
+          <option value= "1">Artist</option>
+          <option value= "2" >Genre</option>
+          <option value= "3" >City</option>
       </select>
       <input type="text" name="search_value">
+      <input type="submit" name = "recent_search" value="Display Recent Searches" onclick = "processData()">
       <input type="submit" name = "search"value="Search" onclick = "processData()">
     </form>
   </div>
+  
+  <div name = "search_data"> </div>
 
 
 </body>
