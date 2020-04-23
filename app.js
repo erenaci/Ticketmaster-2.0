@@ -1,4 +1,4 @@
-var express=require("express"); 
+const express=require("express"); 
 var bodyParser=require("body-parser"); 
 
   
@@ -9,8 +9,8 @@ var app = express()
 var adr = require('url');
 const path = require('path');
 
-// var searchRouter = require ('./routes/users');
 
+//serve the home page
 app.get('/',function(req,res){
   res.sendFile(path.join(__dirname+'/index.html'));
 });
@@ -20,6 +20,43 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ 
     extended: true
 })); 
+
+app.get('/display-artist-searches', (req, res) => {
+  MongoClient.connect(url, function(err, db) {
+      if (err) throw err;
+      var dbo = db.db("Music_Events");
+      dbo.collection("Artist_search").find({} , { projection: { _id: 0, Artist: 1 } }).toArray(function(err, result) {
+        if (err) throw err;
+        console.log(result);
+        res.send(result);
+      });
+  });
+});
+
+
+app.get('/display-genre-searches', (req, res) => {
+  MongoClient.connect(url, function(err, db) {
+      if (err) throw err;
+      var dbo = db.db("Music_Events");
+      dbo.collection("Genre_Search").find({} , { projection: { _id: 0, Genre: 1 } }).toArray(function(err, result) {
+        if (err) throw err;
+        console.log(result);
+        res.send(result);
+      });
+  });
+});
+
+app.get('/display-city-searches', (req, res) => {
+  MongoClient.connect(url, function(err, db) {
+      if (err) throw err;
+      var dbo = db.db("Music_Events");
+      dbo.collection("City_search").find({} , { projection: { _id: 0, City : 1 } }).toArray(function(err, result) {
+        if (err) throw err;
+        console.log(result);
+        res.send(result);
+      });
+  });
+});
 
 app.post('/submit-form', function(req,res){
     MongoClient.connect(url, function(err, db) {
@@ -52,5 +89,8 @@ app.post('/submit-form', function(req,res){
         
   }); 
 });
+
+
+  
   
 app.listen(process.env.PORT || 3000, process.env.IP || '0.0.0.0' );
