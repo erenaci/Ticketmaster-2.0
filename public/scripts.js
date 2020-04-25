@@ -1,26 +1,26 @@
-// const express=require("express"); 
-// var bodyParser=require("body-parser"); 
-// 
-// 
-// const MongoClient = require('mongodb').MongoClient; 
+// const express=require("express");
+// var bodyParser=require("body-parser");
+//
+//
+// const MongoClient = require('mongodb').MongoClient;
 // var url = "mongodb+srv://andreafoo11:andreafoo@cluster0-blvfe.mongodb.net/test?\
 //           retryWrites=true&w=majority";
 // var app = express();
 // var adr = require('url');
 // const path = require('path');
-// 
-// 
+//
+//
 // //serve the home page
 // app.get('/',function(req,res){
 //   res.sendFile(path.join(__dirname+'/index.html'));
 // });
-// 
-// 
-// app.use(bodyParser.json()); 
-// app.use(bodyParser.urlencoded({ 
+//
+//
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({
 //     extended: true
-// })); 
-// 
+// }));
+//
 // // app.get('/display-artist-searches', (req, res) => {
 // //   MongoClient.connect(url, function(err, db) {
 // //       if (err) throw err;
@@ -32,8 +32,8 @@
 // //       });
 // //   });
 // // });
-// // 
-// // 
+// //
+// //
 // // app.get('/display-genre-searches', (req, res) => {
 // //   MongoClient.connect(url, function(err, db) {
 // //       if (err) throw err;
@@ -45,7 +45,7 @@
 // //       });
 // //   });
 // // });
-// 
+//
 // app.get('/display-city-searches', (req, res) => {
 //   MongoClient.connect(url, function(err, db) {
 //       if (err) throw err;
@@ -57,7 +57,7 @@
 //       });
 //   });
 // });
-// 
+//
 // app.post('/submit-form', function(req,res){
 //     MongoClient.connect(url, function(err, db) {
 //         if (err) throw err;
@@ -78,20 +78,20 @@
 //         //     db.close();
 //         //   })
 //         // }
-// 
+//
 //         var currobj = { City : req.body.search_value };
 //         dbo.collection("City_Search").insertOne(currobj, function(err, res) {
 //           if (err) throw err;
 //           console.log("updated");
 //           db.close();
 //         })
-// 
-//   }); 
+//
+//   });
 // });
-// 
-// 
-// 
-// 
+//
+//
+//
+//
 // app.listen(process.env.PORT || 3000, process.env.IP || '0.0.0.0' );
 // /*-- use AJAX data pattern to send a request to the API, tetreive some data, and display the data
 // */
@@ -124,7 +124,7 @@ function loadData() {
     var api_key = "&apikey=IRf1McTms041EqaYu7WMVAtq6JuW4WQd";
     var url = api_url + city + api_key;
     */
-   
+
 
     request = new XMLHttpRequest();
     request.open("GET", url, true);
@@ -159,9 +159,6 @@ function loadData() {
         console.log(results);
 
 
-        /*displaying information*/
-        document.getElementById("data").innerHTML=array_Artists + array_Genre + array_Date + array_Venue;
-
         }else if (request.readyState == 4 && request.status!= 200){
             document.getElementById("data").innerHTML="Error";
         }
@@ -172,8 +169,6 @@ function loadData() {
 
 
 }
-
-
 
 for (i = 0; i<array_Artists.length; i++) {
             for (j = 0; j < array_Artists.length; j++) {
@@ -257,6 +252,3 @@ console.log(table);
 
 
 }
-
-
-

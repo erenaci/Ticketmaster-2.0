@@ -3,13 +3,13 @@
 <head>
     <title>Final Project</title>
     <meta charset="utf-8"/>
-    <meta name = "viewport" content = "width=device-width, initial-scale=1.0"> 
-    <script src="scripts.js"></script>
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <script src="./public/scripts.js"></script>
     <!--- External Stylesheet --->
-    <link rel="stylesheet" type="text/css" href="./styles/final_style.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="./public/final_style.css" media="screen">
 
     <style>
-        body { 
+        body {
             background-color: #75a3a3;
         }
 
@@ -49,7 +49,7 @@
             background-color: white;
             background-image: url('searchicon.png');
             background-size: 25px;
-            background-position: 10px 10px; 
+            background-position: 10px 10px;
             background-repeat: no-repeat;
             padding: 12px 20px 12px 40px;
             transition: width 0.4s ease-in-out;
@@ -61,7 +61,7 @@
 
 
     </style>
-    
+
     <script language="javascript">
         function display_recent_searches() {
             console.log('display recent searches');
@@ -95,7 +95,7 @@
         <div class="header">
             <a href="#default" class="logo">k.a.r.e concerts</a>
         </div>
-    </div>   
+    </div>
 
     <br>
     <br>
@@ -104,14 +104,14 @@
     <table id="table" align="center" border-width="thin medium"> </table>
             outline color: bordercolor="#990000" -->
     <br>
-    
+
 
     <div>
 
     <div class = "input">
     <form action="" method="post" name="formInput" action = "/submit-form">
         Find music events in your city!
-        
+
         <div style="line-height:20%;">
             <br>
         </div>
@@ -125,8 +125,8 @@
         <br>
         </div>
         <input type="button" value="Search" id="submit" onclick="loadData();tableContent();">
-     
- 
+
+
     </form>
     <div id = "recent_search_display"> </div>
 
