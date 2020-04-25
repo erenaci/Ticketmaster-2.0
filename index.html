@@ -1,124 +1,176 @@
-<!doctype html> 
-<html> 
-<head> 
-    <title> Comp20 Final Project</title>
-    <meta name="author" content="Raina Mak"> 
-    <meta charset="utf-8"/> 
+<!doctype html>
+ <html>
+<head>
+    <title>Final Project</title>
+    <meta charset="utf-8"/>
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0"> 
+    <script src="scripts.js"></script>
+    <!--- External Stylesheet --->
+    <link rel="stylesheet" type="text/css" href="./styles/final_style.css" media="screen">
+
     <style>
-        body{
-              background-color:beige;
-             text-align: center;
+        body { 
+            background-color: #75a3a3;
         }
-    
+
+        .input {
+            font-family: Copperplate;
+            font-weight: bold;
+            color: black;
+            text-align: center;
+            font-size: 50px;
+        }
+
+        #submit {
+            background-color: #ff6666;
+            padding: .5em;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 8px;
+            color: #fff;
+            font-family: Tahoma, Geneva, sans-serif;
+            font-size: 18px;
+            text-decoration: none;
+            border: none;
+            width: 110px;
+        }
+
+        #submit:hover {
+            border: none;
+            background: #696969;
+        }
+
+        input[type=text] {
+            width: 180px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 3px;
+            font-size: 16px;
+            background-color: white;
+            background-image: url('searchicon.png');
+            background-size: 25px;
+            background-position: 10px 10px; 
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 40px;
+            transition: width 0.4s ease-in-out;
+        }
+
+    input[type=text]:focus {
+        width: 50%;
+    }
+
+
     </style>
-    <script> 
-        /*-- use AJAX data pattern to send a request to the API, tetreive some data, and display the data
-        */
-        function loadData(city){
-            request = new XMLHttpRequest(); 
-            request.open("GET", "https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&city=" + city + "&apikey=IRf1McTms041EqaYu7WMVAtq6JuW4WQd",true); 
-            request.onreadystatechange= function(){
-                if(request.readyState == 4 && request.status ==200){
-                    var result = request.response; 
-                    events = JSON.parse(result);
-                    /*data for names of events are an located in an array of objects called events. each object has key "name" with value artist name*/
-                    var array_Artists = []; 
-                    event_array = events["_embedded"]["events"]; 
-                    event_array.forEach(function(item){
-                        array_Artists.push("<li>" + item["name"]+"</li>");   
-                    }) 
-                    document.getElementById("data").innerHTML=array_Artists; 
-                    
-                }else if (request.readyState == 4 && request.status!= 200){
-                    document.getElementById("data").innerHTML="Error"; 
-                }
-            }
-            request.send();
-        }
     
-        function processData(){
-            var city = document.getElementById("city").value 
-            if (city!=""){
-                document.write(city);
-                loadData(city); 
-            }
-        }
-        
+    <script language="javascript">
         function display_recent_searches() {
             console.log('display recent searches');
-            if(document.getElementById("menu").value == 1) {
-                fetch('/display-artist-searches', {method: 'GET'})
-                  .then(function(response) {
-                      if(response.ok) return response.json();
-                      throw new Error('Request failed.');
-                  })
-                  .then(function(data) {
-                      document.getElementById('recent_search_display').innerHTML = JSON.stringify(data);
-                  })
-                  .catch(function(error) {
-                    console.log(error);
-                  });
-            }
-            else if (document.getElementById("menu").value == 2) {
-                fetch('/display-genre-searches', {method: 'GET'})
-                  .then(function(response) {
-                      if(response.ok) return response.json();
-                      throw new Error('Request failed.');
-                  })
-                  .then(function(data) {
-                      document.getElementById('recent_search_display').innerHTML = JSON.stringify(data);
-                  })
-                  .catch(function(error) {
-                    console.log(error);
-                  });
-            }
-            else if (document.getElementById("menu").value == 3) {
-                fetch('/display-city-searches', {method: 'GET'})
-                  .then(function(response) {
-                      if(response.ok) return response.json();
-                      throw new Error('Request failed.');
-                  })
-                  .then(function(data) {
-                      document.getElementById('recent_search_display').innerHTML = JSON.stringify(data);
-                  })
-                  .catch(function(error) {
-                    console.log(error);
-                  });
-            }
-            
+            fetch('/display-city-searches', {method: 'GET'})
+              .then(function(response) {
+                  if(response.ok) return response.json();
+                  throw new Error('Request failed.');
+              })
+              .then(function(data) {
+                  document.getElementById('recent_search_display').innerHTML = JSON.stringify(data);
+              })
+              .catch(function(error) {
+                console.log(error);
+              });
         }
-      
-    
+        display_recent_searches();
     </script>
-    
+
 </head>
 
-<body> 
-    <!-- 
+<body>
+    <!--
     key: IRf1McTms041EqaYu7WMVAtq6JuW4WQd
-    API Call Format 
+    API Call Format
     https://app.ticketmaster.com/{package}/{version}/{resource}.json?apikey=**{API key}
     https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/
-    --> 
+    -->
+
+    <!--- <header> --->
+    <div class="header-fixed">
+        <div class="header">
+            <a href="#default" class="logo">k.a.r.e concerts</a>
+        </div>
+    </div>   
+
+    <br>
+    <br>
+
+    <!-- style table
+    <table id="table" align="center" border-width="thin medium"> </table>
+            outline color: bordercolor="#990000" -->
+    <br>
     
-    <!-- displaying list of music events--> 
-    <h1 style="text-align: center;">Music events in Boston:</h1>
-    <div id="data" style="text-align: center;">Loading...</div>
-    
-    <div id="searchHome">
-    <form method = "POST" action = "/submit-form">
-      <select name="menu" id = "menu" onchange = "return display_recent_searches()" method = "post">
-          <option value= "0" selected>Select</option>
-          <option value= "1">Artist</option>
-          <option value= "2" >Genre</option>
-          <option value= "3" >City</option>
-      </select>
-      <input type="text" name="search_value">
-      <input type="submit" id = "search" name = "search"value="Search" onclick = "processData()">
+
+    <div>
+
+    <div class = "input">
+    <form action="" method="post" name="formInput" action = "/submit-form">
+        Find music events in your city!
+        
+        <div style="line-height:20%;">
+            <br>
+        </div>
+
+        <!--
+        <input style="width:150px; height:20px; margin-top: 6px;" type="text" name="city" id="inputBox" placeholder="Your city...">
+        -->
+        <input type="text" name="city" id="inputBox" placeholder="Enter your city...">
+
+        <div style="line-height:20%;">
+        <br>
+        </div>
+        <input type="button" value="Search" id="submit" onclick="loadData();tableContent();">
+     
+ 
     </form>
-  </div>
-  <h2> Recent Searches: </h2>
-  <div id = "recent_search_display"> </div>
+    <div id = "recent_search_display"> </div>
+
+    </div>
+    <br>
+    <table id="table" align="center" border-width="thin medium"> </table>
+    <br>
+    <br>
+
+
+
+
+
+<!--- Filtering the data: form that allows user to pick genre -->
+<form>
+    <b><em>Select to Filter by Genre:</em></b>
+    <select id="genre">
+        <option value="alternative">Alternative</option>
+        <option value="ballads/romantic">Balads/Romantic</option>
+        <option value="blues">Blues</option>
+        <option value="classical">Classical</option>
+        <option value="country">Country</option>
+        <option value="dance/electronic">Dance/Electronic</option>
+        <option value="folk">Folk</option>
+        <option value="hip-hop/rap">Hip-Hop/Rap</option>
+        <option value="holiday">Holiday</option>
+        <option value="jazz">Jazz</option>
+        <option value="latin">Latin</option>
+        <option value="medieval/renaissance">Medieval/Renaissance</option>
+        <option value="metal">Metal</option>
+        <option value="other">Other</option>
+        <option value="pop">Pop</option>
+        <option value="r&b">R&B</option>
+        <option value="reggae">Reggae</option>
+        <option value="religious">Religious</option>
+        <option value="rock">Rock</option>
+        <option value="world">World</option>
+    </select>
+    &nbsp;
+    <button type="button" id="button2">Filter</button>
+
+
+
+
 
 
 </body>

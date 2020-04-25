@@ -1,0 +1,47 @@
+.header-fixed {
+    width:110%;
+    position: fixed;
+    top:0px;
+    margin: 0;
+    padding: 0;
+    margin-left: -12px;
+}
+
+/* Heading Style */
+.header {
+    background-color: #FFFAF0;
+    padding: 5px;
+    overflow: hidden;
+    margin-left: 0px;
+}
+
+.header-right {
+  float: right;
+}
+
+/* Company Heading */
+.header a {
+    float: left;
+    color: #000080;
+    padding: 12px;
+    font-size: 18px; 
+    line-height: 12px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.header a.logo {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: Didot;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
