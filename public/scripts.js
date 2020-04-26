@@ -1,101 +1,3 @@
-// const express=require("express");
-// var bodyParser=require("body-parser");
-//
-//
-// const MongoClient = require('mongodb').MongoClient;
-// var url = "mongodb+srv://andreafoo11:andreafoo@cluster0-blvfe.mongodb.net/test?\
-//           retryWrites=true&w=majority";
-// var app = express();
-// var adr = require('url');
-// const path = require('path');
-//
-//
-// //serve the home page
-// app.get('/',function(req,res){
-//   res.sendFile(path.join(__dirname+'/index.html'));
-// });
-//
-//
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({
-//     extended: true
-// }));
-//
-// // app.get('/display-artist-searches', (req, res) => {
-// //   MongoClient.connect(url, function(err, db) {
-// //       if (err) throw err;
-// //       var dbo = db.db("Music_Events");
-// //       dbo.collection("Artist_search").find({} , { projection: { _id: 0, Artist: 1 } }).toArray(function(err, result) {
-// //         if (err) throw err;
-// //         console.log(result);
-// //         res.send(result);
-// //       });
-// //   });
-// // });
-// //
-// //
-// // app.get('/display-genre-searches', (req, res) => {
-// //   MongoClient.connect(url, function(err, db) {
-// //       if (err) throw err;
-// //       var dbo = db.db("Music_Events");
-// //       dbo.collection("Genre_Search").find({} , { projection: { _id: 0, Genre: 1 } }).toArray(function(err, result) {
-// //         if (err) throw err;
-// //         console.log(result);
-// //         res.send(result);
-// //       });
-// //   });
-// // });
-//
-// app.get('/display-city-searches', (req, res) => {
-//   MongoClient.connect(url, function(err, db) {
-//       if (err) throw err;
-//       var dbo = db.db("Music_Events");
-//       dbo.collection("City_search").find({} , { projection: { _id: 0, City : 1 } }).toArray(function(err, result) {
-//         if (err) throw err;
-//         console.log(result);
-//         res.send(result);
-//       });
-//   });
-// });
-//
-// app.post('/submit-form', function(req,res){
-//     MongoClient.connect(url, function(err, db) {
-//         if (err) throw err;
-//         var dbo = db.db("Music_Events");
-//         // if(req.body.menu == 1) {
-//         //     var currobj = { Artist : req.body.search_value };
-//         //     dbo.collection("Artist_search").insertOne(currobj, function(err, res) {
-//         //       if (err) throw err;
-//         //       console.log("updated");
-//         //       db.close();
-//         //     })
-//         // }
-//         // else if (req.body.menu == 2) {
-//         //   var currobj = { Genre : req.body.search_value };
-//         //   dbo.collection("Genre_Search").insertOne(currobj, function(err, res) {
-//         //     if (err) throw err;
-//         //     console.log("updated");
-//         //     db.close();
-//         //   })
-//         // }
-//
-//         var currobj = { City : req.body.search_value };
-//         dbo.collection("City_Search").insertOne(currobj, function(err, res) {
-//           if (err) throw err;
-//           console.log("updated");
-//           db.close();
-//         })
-//
-//   });
-// });
-//
-//
-//
-//
-// app.listen(process.env.PORT || 3000, process.env.IP || '0.0.0.0' );
-// /*-- use AJAX data pattern to send a request to the API, tetreive some data, and display the data
-// */
-
 var results=[]; /*object of array of objects(events)*/
 
     /*making arrays to store values*/
@@ -103,13 +5,13 @@ var results=[]; /*object of array of objects(events)*/
             var array_Genre = [];
             var array_Date = [];
             var array_Venue = [];
+            
 
 
-
-function loadData() {
+function loadData(city_to_search) {
     var api_url =  "https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&city=";
     var api_key = "&apikey=IRf1McTms041EqaYu7WMVAtq6JuW4WQd";
-    var url = api_url + getInput() + api_key;
+    var url = api_url + city_to_search + api_key;
 
     /*making arrays to store values
             var array_Artists = [];
@@ -167,7 +69,6 @@ function loadData() {
 
     setTimeout(function(){ build_table();}, 1000);
 
-
 }
 
 for (i = 0; i<array_Artists.length; i++) {
@@ -179,10 +80,10 @@ for (i = 0; i<array_Artists.length; i++) {
 }
 
 /* gets user input and passes into URL */
-function getInput () {
-  var input = document.formInput.city.value;
-  return input;
-}
+// function getInput () {
+//   var input = document.formInput.city.value;
+//   return input;
+// }
 
 
 /* styling for content inside the table */
@@ -252,3 +153,4 @@ console.log(table);
 
 
 }
+
