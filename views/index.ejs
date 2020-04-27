@@ -123,21 +123,30 @@
 
       <div class="cities_list">
         <!-- Loop through quotes -->
-        <% var i = 0;
+        <% 
+        var i = data.cities.length - 1;
         var cities_to_print = [];
         var count = 0;
-        while (i < data.cities.length) {
-          if (data.cities[i].City != "" ) {
-              for (var j = 0; j < 5; j++) {
-                  if(cities_to_print[j]  != data.cities[i].City) {
-                      cities_to_print[count] = data.cities[i].City;
-                      break;
-                  }
-                  break;
+        while (i >= 0) {
+          if(data.cities[i].City != "") {
+              if (cities_to_print.length == 0) {
+                cities_to_print[count] = data.cities[i].City;
+                count++;
               }
-              count++
+              else {
+                  var in_array = false;
+                  for(var j = 0; j < cities_to_print.length; j++) {
+                    if(data.cities[i].City == cities_to_print[j]) {
+                        in_array = true;
+                    }
+                  }
+                  if(in_array == false) {
+                      cities_to_print[count] = data.cities[i].City;
+                      count++;
+                  }
+              }
           }
-          i++;
+          i--;
         }
         %>
         <span>
