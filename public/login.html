@@ -1,7 +1,7 @@
 <html>
 <title> Login Page </title>
-<meta name="author" content="Andrea Foo"> 
-<meta charset="utf-8"/> 
+<meta name="author" content="Andrea Foo">
+<meta charset="utf-8"/>
 
 <head>
     <title>Final Project</title>
@@ -9,9 +9,9 @@
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
     <script src="./public/scripts.js"></script>
     <!--- External Stylesheet --->
-    <link rel="stylesheet" type="text/css" href="./public/login_signup_style.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="./public/final_style.css" media="screen">
 
-    
+
 
   <script>
     function validateForm() {
@@ -19,25 +19,33 @@
       var y = document.login.username.value;
       var z = document.login.password.value;
       if (x == "") {
-        alert("Please enter a username");
+        alert("Please enter a email");
         document.login.username.focus() ;
         return false;
       }
       if (y == "") {
-        alert("Please enter a password");
+        alert("Please enter a username");
         document.login.password.focus() ;
         return false;
       }
       if (z == "") {
-        alert("Please enter a email");
+        alert("Please enter a password");
         document.login.email.focus() ;
         return false;
       }
       return true;
     }
   </script>
-  
+
 </head>
+
+    <div class="header-fixed">
+        <div class="header">
+            <a href="index.html" class="logo">k.a.r.e concerts</a>
+          
+        </div>
+    </div>
+
 
 
 <body>
@@ -48,12 +56,12 @@
       <input class="un " type="text" name = "username" align="center" placeholder="Username" >
       <input class="pass" type="password" name = "password" align="center" placeholder="Password" >
       <input type="submit" class = "submit" align="center" value = "Sign in">
-    </form>        
+    </form>
       <p class="forgot" align="center">Haven't created an account? <a href="signup.html"><u>Register </u></a></p>
-            
-      
+
+
   </div>
-     
+
 </body>
 
 

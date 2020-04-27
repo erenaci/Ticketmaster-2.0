@@ -74,9 +74,13 @@
     -->
 
     <!--- <header> --->
+    <!--- <header> --->
     <div class="header-fixed">
         <div class="header">
-            <a href="#default" class="logo">k.a.r.e concerts</a>
+            <a href="index.html" class="logo">k.a.r.e concerts</a>
+            <div class="header-right">
+                <h1><a href="login.html">Log Out</a><h1>
+            </div>
         </div>
     </div>
 
@@ -94,7 +98,7 @@
     <div class = "input">
       <h1>
         <!-- Output name from the iterated quote object -->
-          <span>Welcome <%= data.name.Username %>! </span>
+        <span>Welcome <%= data.name.Username %>! </span>
       </h1>
     <form name="formInput" action = '/search' method = "POST" >
         Find music events in your city!
@@ -111,7 +115,7 @@
         <div style="line-height:20%;">
         <br>
         </div>
-        <input type="submit" value="Search" id="submit" onsubmit="loadData();tableContent();">
+        <input type="submit" value="Search" id="submit" onsubmit="loadData();tableContent();filter_genre();">
 
 
     </form>
@@ -119,19 +123,19 @@
 
       <div class="cities_list">
         <!-- Loop through quotes -->
-        <% var i = 0; 
-        var cities_to_print = ["1", "2", "3", "4", "5"];
+        <% var i = 0;
+        var cities_to_print = [];
         var count = 0;
-        while (i < data.cities.length ) {
+        while (i < data.cities.length) {
           if (data.cities[i].City != "" ) {
               for (var j = 0; j < 5; j++) {
                   if(cities_to_print[j]  != data.cities[i].City) {
                       cities_to_print[count] = data.cities[i].City;
-                      count++
                       break;
                   }
                   break;
               }
+              count++
           }
           i++;
         }
@@ -139,7 +143,7 @@
         <span>
           <p class="cities">
         <% for (var i = 0; i < 5; i++) {%>
-          
+
           <!-- Output name from the iterated quote object -->
             <%=cities_to_print[i] %>
             &nbsp &nbsp &nbsp
@@ -154,42 +158,6 @@
     <table id="table" align="center" border-width="thin medium"> </table>
     <br>
     <br>
-
-
-
-
-
-<!--- Filtering the data: form that allows user to pick genre -->
-<form>
-    <b><em>Select to Filter by Genre:</em></b>
-    <select id="genre">
-        <option value="alternative">Alternative</option>
-        <option value="ballads/romantic">Balads/Romantic</option>
-        <option value="blues">Blues</option>
-        <option value="classical">Classical</option>
-        <option value="country">Country</option>
-        <option value="dance/electronic">Dance/Electronic</option>
-        <option value="folk">Folk</option>
-        <option value="hip-hop/rap">Hip-Hop/Rap</option>
-        <option value="holiday">Holiday</option>
-        <option value="jazz">Jazz</option>
-        <option value="latin">Latin</option>
-        <option value="medieval/renaissance">Medieval/Renaissance</option>
-        <option value="metal">Metal</option>
-        <option value="other">Other</option>
-        <option value="pop">Pop</option>
-        <option value="r&b">R&B</option>
-        <option value="reggae">Reggae</option>
-        <option value="religious">Religious</option>
-        <option value="rock">Rock</option>
-        <option value="world">World</option>
-    </select>
-    &nbsp;
-    <button type="button" id="button2">Filter</button>
-
-
-
-
 
 
 </body>
