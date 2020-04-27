@@ -16,6 +16,8 @@
 .header-right {
   float: right;
   margin-right: 10px;
+  font-family: "system-ui";
+  display: inline;
 }
 
 /* Company Heading */
@@ -32,7 +34,8 @@
 .header a.logo {
     font-size: 40px;
     font-weight: bold;
-    font-family: Didot;
+    font-style: oblique;
+    font-family: 'Candara';
 }
 
 .header a:hover {
@@ -65,7 +68,7 @@ h1 {
 
 body {
     background-color: #75a3a3;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'system-ui', sans-serif;
 }
 
 .main {
@@ -80,7 +83,7 @@ body {
 .sign {
     padding-top: 40px;
     color: #8C55AA;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'system-ui', sans-serif;
     font-weight: bold;
     font-size: 23px;
 }
@@ -102,7 +105,7 @@ margin-bottom: 50px;
 margin-left: 46px;
 text-align: center;
 margin-bottom: 27px;
-font-family: 'Ubuntu', sans-serif;
+font-family: 'system-ui', sans-serif;
 }
 
 form.form1 {
@@ -126,7 +129,7 @@ margin-bottom: 50px;
 margin-left: 46px;
 text-align: center;
 margin-bottom: 27px;
-font-family: 'Ubuntu', sans-serif;
+font-family: 'system-ui', sans-serif;
 }
 
 
@@ -145,7 +148,7 @@ font-family: 'Ubuntu', sans-serif;
     padding-right: 40px;
     padding-bottom: 10px;
     padding-top: 10px;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'system-ui', sans-serif;
     margin-left: 35%;
     font-size: 13px;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
