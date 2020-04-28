@@ -34,6 +34,10 @@ MongoClient.connect(url, { useUnifiedTopology: true })
         console.log(__dirname);
         res.sendFile(path.join(__dirname + '/public/signup.html'));
     });
+    
+    
+    
+    
 
     app.get('/login.html',function(req,res){
         console.log(__dirname);
@@ -114,7 +118,24 @@ MongoClient.connect(url, { useUnifiedTopology: true })
           })
           .catch(error => console.error(error))
     });
+    
+    app.get('/search',function(req,res){
+      var currobj = { City : "Boston" };
+      res.render('search.ejs', {city_name : currobj});
+    });
+    
+    app.get('/submit-login',function(req,res){
+      dbo.collection("Users").find(current_user).toArray(function(err, result) {
+            if (err) throw err;
+            console.log(result)
+            dbo.collection("City_Search").find({} , { projection: { _id: 0, City : 1 } }).toArray()
+            .then(results => {
+               res.render('index.ejs', {data : { cities: results , name: current_user }})
+            })
+            .catch(error => console.error(error))
 
+        });
+      });
 });
 
 

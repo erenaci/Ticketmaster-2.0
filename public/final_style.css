@@ -10,7 +10,7 @@ h2{
 }
 .header-fixed {
     width:100%;
-    top:10px;
+    /* top:10px; */
     margin-left: -8px;
 }
 
@@ -18,15 +18,19 @@ h2{
 /* Heading Style */
 .header {
     background-size: auto;  
-    padding: 50px;
+    /* padding: 20px; */
     overflow: hidden;
+    /* background-color: white; */
+    height: 40px;
+    padding: 20px;
+    /* display: inline; */
 }
 
 .header-right {
   float: right;
-  margin-right: 10px;
+  /* margin-right: 10px; */
   font-family: "system-ui";
-  /*display: inline;*/
+  /* display: inline; */
 }
 
 /* Company Heading */
@@ -48,8 +52,9 @@ h2{
 }
 
 .header a:hover {
-    background-color: #D3D3D3;
-    color: #000080;
+    /* background-color: #D3D3D3; */
+    color: #cadetblue;
+    line-height: 12px;
 }
 
 .footer {
@@ -173,4 +178,3 @@ a {
     .main {
         border-radius: 0px;
 }
-

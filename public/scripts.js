@@ -98,7 +98,10 @@ function build_table(){
         theader.style.textAlign = "left";
         theader.style.padding = "5px 15px 0px 10px";
         theader.style.borderStyle = "solid";
+        theader.style.background = "black";
+        theader.style.opacity = "0.85";
         theader.innerHTML = cols[i];
+        
 
         /*appending keys(column name) to table row*/
         tr.appendChild(theader);
@@ -117,6 +120,9 @@ function build_table(){
             cell.style.padding = "7px 15px 7px 10px";
             cell.style.borderStyle = "solid";
             cell.style.borderColor = "#b3b3b3";
+            cell.style.color = "white";
+            cell.style.background = "black";
+            cell.style.opacity = "0.85";
         }
     }
     

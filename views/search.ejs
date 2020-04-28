@@ -16,7 +16,6 @@
             text-align: center;
             font-size: 50px;
         }
-
         #submit {
             background: linear-gradient(to right, #9C27B0, #E040FB);
             padding: .5em;
@@ -31,12 +30,10 @@
             width: 110px;
         }
   
-
         #submit:hover {
             border: none;
             background: #696969;
         }
-
         input[type=text] {
             width: 180px;
             box-sizing: border-box;
@@ -53,20 +50,82 @@
         }
         
         
-
     input[type=text]:focus {
         width: 50%;
     }
     
-    .filter_button {
-      
+    .Filter_section {
+      color: white;
+      text-align: center;
+      margin-top: 30px;
+      /* background-color: black; */
+      padding:25px;
+      width:75%; 
+      display: block;
+        margin-left: auto;
+        margin-right: auto;   
     }
     
-    .filter_section {
-      margin: 0 auto;
+    #select {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 20px;
+      margin-top: 20px;
+  
     }
-
-
+    
+    
+    .filter {
+        cursor: pointer;
+          border-radius: 0.5em;
+          color: white;
+          font-style: bold;
+          background: linear-gradient(to right, #9C27B0, #E040FB);
+          border: 0;
+          padding-left: 20px;
+          padding-right: 20px;
+          /* padding-bottom: 10px;
+          padding-top: 10px; */
+          font-family: 'system-ui', sans-serif;
+          font-size: 15px;
+          box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+          margin-left: 20px;
+          margin-top: 10px;
+          height: 35px;
+    }
+    .filter:hover {
+        border: none;
+        background: #696969;
+    }
+    
+    .location_message {
+      color: #fadadd;
+      font-family: Copperplate;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    
+    #select {
+      position: relative;
+      display: block;
+      padding: 1.5em 2em;
+      background: white;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+      cursor: pointer;
+    }
+    
+    .location_message {
+      font-size: 40px;
+      padding-bottom: 15px;
+    }
+    
+    .select_box {
+      display: inline-flex;
+    }
+    
+    .genre_message {
+      font-size: 20px;
+    }
     </style>
 
 
@@ -123,18 +182,23 @@
     </form>
     </div>
     
-    <div id = "current"> </div>
+    
 
         
     <!--- Filtering the data: drop downthat allows user to pick genre -->
     <div class = "Filter_section">
-    <b><em>Select to Filter by Genre:</em></b>
-    <select id="select">
+    <div id = "current" class = "location_message"> </div>
+    <div class = "genre_message"><b><em>Select to Filter by Genre:</em></b></div>
+    
+    <div class = "select_box">
+    <select id="select" class = "select-filter">
         <option value="All">All</option>
     </select>
 
-    <button type="button" id="filter" class = "filter_button" onclick="filter_genre();">Filter</button>
+    <button type="button" id="filter" class = "filter" onclick="filter_genre();">Filter</button>
     </div>
+    
+  </div>
     
     <br>
     <table id="table" align="center" border-width="thin medium"> </table>
@@ -146,7 +210,6 @@
       loadData(city_to_search);
       tableContent();
       genre_dropdown(); 
-
     </script>
     
   
