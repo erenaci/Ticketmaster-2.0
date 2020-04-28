@@ -22,7 +22,7 @@
         }
 
         #submit {
-            background-color: #ff6666;
+            background: linear-gradient(to right, #9C27B0, #E040FB);
             padding: .5em;
             -moz-border-radius: 5px;
             -webkit-border-radius: 5px;
@@ -34,6 +34,7 @@
             border: none;
             width: 110px;
         }
+  
 
         #submit:hover {
             border: none;
@@ -54,9 +55,19 @@
             padding: 12px 20px 12px 40px;
             transition: width 0.4s ease-in-out;
         }
+        
+        
 
     input[type=text]:focus {
         width: 50%;
+    }
+    
+    .filter_button {
+      
+    }
+    
+    .filter_section {
+      margin: 0 auto;
     }
 
 
@@ -86,13 +97,11 @@
 
     <br>
     <br>
-
-    <!-- style table
-    <table id="table" align="center" border-width="thin medium"> </table>
-            outline color: bordercolor="#990000" -->
     <br>
 
+    <div class = "description"> </div> 
 
+    
     <div>
 
     <div class = "input">
@@ -118,17 +127,19 @@
 
     </form>
     </div>
+    
+    <div id = "current"> </div>
 
         
     <!--- Filtering the data: drop downthat allows user to pick genre -->
-
+    <div class = "Filter_section">
     <b><em>Select to Filter by Genre:</em></b>
     <select id="select">
         <option value="All">All</option>
     </select>
 
-    <button type="button" id="filter" onclick="filter_genre();">Filter</button>
-        
+    <button type="button" id="filter" class = "filter_button" onclick="filter_genre();">Filter</button>
+    </div>
     
     <br>
     <table id="table" align="center" border-width="thin medium"> </table>
@@ -142,6 +153,8 @@
       genre_dropdown(); 
 
     </script>
+    
+  
 
     
 

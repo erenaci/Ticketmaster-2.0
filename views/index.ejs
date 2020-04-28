@@ -22,7 +22,7 @@
         }
 
         #submit {
-            background-color: #ff6666;
+            background: linear-gradient(to right, #9C27B0, #E040FB);
             padding: .5em;
             -moz-border-radius: 5px;
             -webkit-border-radius: 5px;
@@ -58,7 +58,19 @@
     input[type=text]:focus {
         width: 50%;
     }
-
+    
+    .city_elem {
+      background-color: black;
+      opacity: 0.4;
+      padding: .5em;
+      color: #fff;
+      font-family: Tahoma, Geneva, sans-serif;
+      font-weight: normal;
+      font-size: 18px;
+      text-decoration: none;
+      border: none;
+      width: 110px;
+    }
 
     </style>
 
@@ -100,7 +112,7 @@
         <span>Welcome <%= data.name.Username %>! </span>
       </h1>
     <form name="formInput" action = '/search' method = "POST" >
-        Find music events in your city!
+        <div class = "message" > Find music events in your city! </div>
 
         <div style="line-height:20%;">
             <br>
@@ -118,7 +130,7 @@
 
 
     </form>
-    <h2> Popular City Searches </h2>
+    <h2> Recent City Searches </h2>
 
       <div class="cities_list">
         <!-- Loop through quotes -->
@@ -148,16 +160,14 @@
           i--;
         }
         %>
-        <span>
           <p class="cities">
         <% for (var i = 0; i < 5; i++) {%>
 
           <!-- Output name from the iterated quote object -->
-            <%=cities_to_print[i] %>
+            <span class="city_elem"><%=cities_to_print[i] %></span>
             &nbsp &nbsp &nbsp
           <% } %>
             </p>
-          </span>
       </div>
 
     </div>
