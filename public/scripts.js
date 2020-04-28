@@ -5,7 +5,9 @@ var array_Artists = [];
 var array_Genre = [];
 var array_Date = [];
 var array_Venue = [];
-console.log(typeof array_Genre); // object
+/*creating table element*/
+var table = document.createElement("table");
+
 
 
 function loadData(city_to_search) {
@@ -35,13 +37,6 @@ function loadData(city_to_search) {
 
                  /*creating JSON objects*/
 
-                var temp;
-                var tempgenrearray = []
-                for (var i = 0; i<array_Genre.length; i++) {
-                  var =
-                  array_Genre[i].push(tempgenrearray);
-                }
-                console.log(tempgenrearray);
                 for (var i = 0; i<array_Artists.length; i++) {
                     temp = {"artist":array_Artists[i], "genre":array_Genre[i],"venue":array_Venue[i], "date":array_Date[i]};
 
@@ -56,8 +51,10 @@ function loadData(city_to_search) {
         }
     }
     request.send();
-    setTimeout(function(){ build_table();}, 1000);
-
+    setTimeout(function(){
+        build_table();
+        genre_dropdown();
+    }, 1000);
 }
 
 
@@ -71,6 +68,7 @@ function tableContent()
     dataTable.style.backgroundColor="#e6e6e6";
     dataTable.style.fontSize="medium";
     // dataTable.style.bordercolor="red";
+    
 }
 
 
@@ -88,9 +86,6 @@ function build_table(){
         }
     }
 
-    /*creating table element*/
-    var table = document.createElement("table");
-
     /*creating table row element of table*/
     var tr = table.insertRow(-1);
 
@@ -107,11 +102,10 @@ function build_table(){
 
         /*appending keys(column name) to table row*/
         tr.appendChild(theader);
-        console.log(theader);
 
     }
 
-    console.log(table);
+    var x = [];
     /*adding information to the table*/
     for (var i = 0; i<storedData.length; i++){
         //create a new row//
@@ -125,20 +119,53 @@ function build_table(){
             cell.style.borderColor = "#b3b3b3";
         }
     }
-
+    
     //adding table to document//
     var tempTable = document.getElementById("table");
     tempTable.innerHTML = "";
-    tempTable.appendChild(table);
-    console.log(table);
+    tempTable.appendChild(table); 
 
 }
 
 /*building dropdown list for filtering by genre*/
+function genre_dropdown(){
+    /*getting distinct genres*/ 
+    let unique_genres = array_Genre.filter((item, i, ar) => ar.indexOf(item) === i);
+    
+    /*making dropdown*/   
+    var select = document.getElementById("select"); 
+    for(var i=0; i<unique_genres.length; i++){
+        var option = document.createElement("OPTION"), 
+            text = document.createTextNode(unique_genres[i]); 
+        option.appendChild(text); 
+        select.insertBefore(option, select.lastChild); 
+    } 
+}
+
 function filter_genre(){
-  var storedData = results;
-  console.log(storedData);
-  console.log(storedData[0]);
-  console.log(storedData[0]["genre"]["name"]);
+    /*get option chosen*/ 
+    selectElement = document.querySelector('#select'); 
+    selected = selectElement.value; 
+    console.log(selected); 
+    tr = table.getElementsByTagName("tr"); 
+
+    
+    /*loop through all table rows and hide those that don't match query*/ 
+    for(i=0; i<tr.length; i++){
+        td = tr[i].getElementsByTagName("td")[1]; 
+        
+        /*if all is selected, show everything*/ 
+        if(selected=="All"){
+            tr[i].style.display="";    
+        }else if (td){
+            txtValue=td.textContent || td.innerText; 
+            if (txtValue.indexOf(selected)>-1){
+                tr[i].style.display = ""; 
+            }else{
+                tr[i].style.display = "none"; 
+            }
+        }
+    }
+    
 
 }

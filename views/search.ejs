@@ -117,9 +117,19 @@
 
 
     </form>
-
-
     </div>
+
+        
+    <!--- Filtering the data: drop downthat allows user to pick genre -->
+
+    <b><em>Select to Filter by Genre:</em></b>
+    <select id="select">
+        <option value="All">All</option>
+    </select>
+
+    <button type="button" id="filter" onclick="filter_genre();">Filter</button>
+        
+    
     <br>
     <table id="table" align="center" border-width="thin medium"> </table>
     <br>
@@ -129,39 +139,12 @@
       var city_to_search = "<%= city_name.City %>";
       loadData(city_to_search);
       tableContent();
-        filter_genre();
+      genre_dropdown(); 
 
     </script>
 
+    
 
-
-<!--- Filtering the data: form that allows user to pick genre -->
-<form>
-    <b><em>Select to Filter by Genre:</em></b>
-    <select id="genre">
-        <option value="alternative">Alternative</option>
-        <option value="ballads/romantic">Balads/Romantic</option>
-        <option value="blues">Blues</option>
-        <option value="classical">Classical</option>
-        <option value="country">Country</option>
-        <option value="dance/electronic">Dance/Electronic</option>
-        <option value="folk">Folk</option>
-        <option value="hip-hop/rap">Hip-Hop/Rap</option>
-        <option value="holiday">Holiday</option>
-        <option value="jazz">Jazz</option>
-        <option value="latin">Latin</option>
-        <option value="medieval/renaissance">Medieval/Renaissance</option>
-        <option value="metal">Metal</option>
-        <option value="other">Other</option>
-        <option value="pop">Pop</option>
-        <option value="r&b">R&B</option>
-        <option value="reggae">Reggae</option>
-        <option value="religious">Religious</option>
-        <option value="rock">Rock</option>
-        <option value="world">World</option>
-    </select>
-    &nbsp;
-    <button type="button" id="button2">Filter</button>
 
 </body>
 </html>
