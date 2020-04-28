@@ -1,6 +1,6 @@
 body{
     background-image: url("header_background.jpg"); 
-    color:white; 
+    background-size: cover; 
 }
 
 h2{
@@ -10,7 +10,6 @@ h2{
 }
 .header-fixed {
     width:100%;
-    position: fixed;
     top:10px;
     margin-left: -8px;
 }
@@ -73,12 +72,6 @@ h2 {
 
 h1 {
   font-size: 50px;
-}
-
-
-body {
-    background-color: #75a3a3;
-    font-family: 'system-ui', sans-serif;
 }
 
 .main {
@@ -180,5 +173,4 @@ a {
     .main {
         border-radius: 0px;
 }
-
 
