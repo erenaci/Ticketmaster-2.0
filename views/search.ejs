@@ -16,7 +16,7 @@
         .input {
             font-family: Copperplate;
             font-weight: bold;
-            color: black;
+            color: white; 
             text-align: center;
             font-size: 50px;
         }
@@ -90,11 +90,11 @@
         <div class="header">
             <a href="index.html" class="logo">k.a.r.e concerts</a>
             <div class="header-right">
-                <a href="login.html">Log Out</a>
+                <h1><a href="login.html">Log Out</a></h1>
             </div>
         </div>
     </div>
-
+    
     <br>
     <br>
     <br>
@@ -105,9 +105,10 @@
     <div>
 
     <div class = "input">
+         Find music events in your city
     <form name="formInput" action = '/search' method = "POST" >
-        Find music events in your city!
-
+       
+        
         <div style="line-height:20%;">
             <br>
         </div>
@@ -117,12 +118,10 @@
         -->
         <input type="text" name="city" id="inputBox" placeholder="Enter your city...">
 
-
-
         <div style="line-height:20%;">
         <br>
         </div>
-        <input type="submit" value="Search" id="submit">
+        <input type="submit" value="Search" id="submit" onsubmit="loadData();tableContent();filter_genre();">
 
 
     </form>

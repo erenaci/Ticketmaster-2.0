@@ -1,21 +1,25 @@
 body{
     background-image: url("header_background.jpg"); 
+    color:white; 
 }
 
+h2{
+    
+    font-family:'Courier New','monospace'; 
+    font-size: 10px; 
+}
 .header-fixed {
     width:100%;
     position: fixed;
-    top:0px;
+    top:10px;
     margin-left: -8px;
 }
 
 
 /* Heading Style */
 .header {
-    background-color: #FFFAF0;
-    background-image: url('headerbackground.jpg');
     background-size: auto;  
-    padding: 0px;
+    padding: 50px;
     overflow: hidden;
 }
 
@@ -23,14 +27,13 @@ body{
   float: right;
   margin-right: 10px;
   font-family: "system-ui";
-  display: inline;
+  /*display: inline;*/
 }
 
 /* Company Heading */
 .header a {
     float: left;
-    color: #000080;
-    padding: 12px;
+    color:cadetblue;
     font-size: 18px;
     line-height: 12px;
     border-radius: 6px;

@@ -65,7 +65,7 @@ function tableContent()
 {
     var dataTable = document.getElementById("table");
     dataTable.style.fontFamily="Tahoma, Geneva, sans-serif";
-    dataTable.style.backgroundColor="#e6e6e6";
+   /* dataTable.style.backgroundColor="#e6e6e6";*/
     dataTable.style.fontSize="medium";
     // dataTable.style.bordercolor="red";
     
@@ -94,10 +94,10 @@ function build_table(){
         var theader = document.createElement("th");
         theader.style.fontFamily="Rockwell";
         theader.style.fontSize = "0.75cm";
-        theader.style.color = "#000080";
+        theader.style.color = "#5F9EA0"
         theader.style.textAlign = "left";
         theader.style.padding = "5px 15px 0px 10px";
-        theader.style.borderStyle = "dotted";
+        theader.style.borderStyle = "solid";
         theader.innerHTML = cols[i];
 
         /*appending keys(column name) to table row*/
@@ -115,7 +115,7 @@ function build_table(){
             /*inserting cells at particular place*/
             cell.innerHTML=storedData[i][cols[j]];
             cell.style.padding = "7px 15px 7px 10px";
-            cell.style.borderStyle = "dotted";
+            cell.style.borderStyle = "solid";
             cell.style.borderColor = "#b3b3b3";
         }
     }
