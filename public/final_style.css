@@ -11,13 +11,36 @@ body{
 }
 
 
+h1{
+    margin-bottom: 20px; 
+    font-family: 'Copperplate';
+    font-weight:none; 
+    color: rgb(32,178,170);
+    /* color: white */
+    text-align: center;
+    font-size: 50px;
+    text-shadow: 1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+                     
+}
+
+.input{
+    margin-bottom: 20px; 
+    text-align: center;
+    font-weight: bold; 
+}
+
 h2{
     
     font-family:'Courier New','monospace'; 
-    font-size: 10px; 
+    font-size: 20px; 
+    letter-spacing: 7px; 
     color: #FFFFF0;
     -webkit-text-stroke-width: 0.7px;
     -webkit-text-stroke-color: black;
+    margin-bottom: 20px; 
 }
 .header-fixed {
     width:100%;
@@ -66,14 +89,8 @@ table#table {
     font-weight: bold;
     font-style: oblique;
     font-family: "Arial Black", Gadget, sans-serif;
-    /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
 }
 
-.header a:hover {
-    /* background-color: #D3D3D3; */
-    color: #cadetblue;
-    line-height: 12px;
-}
 
 .footer {
   position: fixed;
@@ -89,22 +106,20 @@ table#table {
   font-size: 20px;
 }
 
-h2 {
-  font-size: 35px;
-}
 
-h1 {
+
+h3 {
   font-size: 50px;
 }
 
 .main {
-        background-color: #FFFFFF;
-        width: 400px;
-        height: 400px;
-        margin: 7em auto;
-        border-radius: 1.5em;
-        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
-    }
+    background-color: #FFFFFF;
+    width: 400px;
+    height: 400px;
+    margin: 7em auto;
+    border-radius: 1.5em;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
 
 .sign {
     padding-top: 40px;
@@ -115,23 +130,23 @@ h1 {
 }
 
 .un {
-width: 76%;
-color: rgb(38, 50, 56);
-font-weight: 700;
-font-size: 14px;
-letter-spacing: 1px;
-background: rgba(136, 126, 126, 0.04);
-padding: 10px 20px;
-border: none;
-border-radius: 20px;
-outline: none;
-box-sizing: border-box;
-border: 2px solid rgba(0, 0, 0, 0.02);
-margin-bottom: 50px;
-margin-left: 46px;
-text-align: center;
-margin-bottom: 27px;
-font-family: 'system-ui', sans-serif;
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'system-ui', sans-serif;
 }
 
 form.form1 {
@@ -139,23 +154,23 @@ form.form1 {
 }
 
 .pass {
-        width: 76%;
-color: rgb(38, 50, 56);
-font-weight: 700;
-font-size: 14px;
-letter-spacing: 1px;
-background: rgba(136, 126, 126, 0.04);
-padding: 10px 20px;
-border: none;
-border-radius: 20px;
-outline: none;
-box-sizing: border-box;
-border: 2px solid rgba(0, 0, 0, 0.02);
-margin-bottom: 50px;
-margin-left: 46px;
-text-align: center;
-margin-bottom: 27px;
-font-family: 'system-ui', sans-serif;
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'system-ui', sans-serif;
 }
 
 

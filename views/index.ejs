@@ -9,14 +9,7 @@
     <link rel="stylesheet" type="text/css" href="./public/final_style.css" media="screen">
 
     <style>
-        .input {
-            font-family: system-ui;
-            font-weight: bold;
-            color: #CD5C5C;
-            /* color: white */
-            text-align: center;
-            font-size: 50px;
-        }
+
         #submit {
             background: linear-gradient(to right, #9C27B0, #E040FB);
             padding: .5em;
@@ -86,7 +79,7 @@
         <div class="header">
             <a href="index.html" class="logo">k.a.r.e concerts</a>
             <div class="header-right">
-                <h1><a href="login.html">Log Out</a></h1>
+                <h3><a href="login.html">Log Out</a></h3>
             </div>
         </div>
     </div>
@@ -104,13 +97,13 @@
 
     <div class = "input">
       <h2>
-        <span>Welcome <%= data.name.Username %>!</span>
+        <span>welcome <%= data.name.Username %></span>
       </h2>
    
     <form name="formInput" action = '/search' method = "POST" >
-        Find music events in your city 
+        <h1> FIND MUSIC EVENTS NEAR YOU </h1> 
 
-        <div style="line-height:20%;">
+        <div style="line-height:30%;">
             <br>
         </div>
 
@@ -119,16 +112,16 @@
         -->
         <input type="text" name="city" id="inputBox" placeholder="Enter your city...">
 
-        <div style="line-height:20%;">
+        <div style="line-height:200%;">
         <br>
         </div>
         <input type="submit" value="Search" id="submit" onsubmit="loadData();tableContent();filter_genre();">
-
+         <div style="line-height:200%;">
     <br>
     <br>
     </form>
-    <h2> Recent City Searches </h2>
-    <div style="line-height:40%;">
+    <h2> RECENT SEARCHES </h2>
+    <div style="line-height:20%;">
         <br>
     </div>
 

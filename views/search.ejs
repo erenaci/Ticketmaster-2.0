@@ -9,13 +9,6 @@
     <link rel="stylesheet" type="text/css" href="./public/final_style.css" media="screen">
 
     <style>
-        .input {
-            font-family: system-ui;
-            font-weight: bold;
-            color: #CD5C5C; 
-            text-align: center;
-            font-size: 50px;
-        }
         #submit {
             background: linear-gradient(to right, #9C27B0, #E040FB);
             padding: .5em;
@@ -100,13 +93,18 @@
     }
     
     .location_message {
-      color: #fadadd;
+      color: rgb(32,178,170);
       font-family: Copperplate;
-      font-weight: bold;
-      font-size: 40px;
+      font-style: italic; 
+      font-size: 35px;
       padding-bottom: 15px;
+            text-shadow: 1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
       -webkit-text-stroke-width: 0.7px;
       -webkit-text-stroke-color: black;
+    
     }
     
     #select {
@@ -127,8 +125,13 @@
     .genre_message {
       font-size: 24px;
       color: white;
+        font-family:'Courier New','monospace'; 
       -webkit-text-stroke-width: 0.2px;
       -webkit-text-stroke-color: black;
+            text-shadow: 1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
     }
     </style>
 
@@ -149,7 +152,7 @@
         <div class="header">
             <a href="index.html" class="logo">k.a.r.e concerts</a>
             <div class="header-right">
-                <h1><a href="login.html">Log Out</a></h1>
+                <h3><a href="login.html">Log Out</a></h3>
             </div>
         </div>
     </div>
@@ -164,11 +167,11 @@
     <div>
 
     <div class = "input">
-         Find music events in your city
+         <h1> FIND MUSIC EVENTS NEAR YOU </h1>
     <form name="formInput" action = '/search' method = "POST" >
        
         
-        <div style="line-height:20%;">
+        <div style="line-height:30%;">
             <br>
         </div>
 
@@ -177,11 +180,11 @@
         -->
         <input type="text" name="city" id="inputBox" placeholder="Enter your city...">
 
-        <div style="line-height:20%;">
+        <div style="line-height:200%;">
         <br>
         </div>
         <input type="submit" value="Search" id="submit" onsubmit="loadData();tableContent();filter_genre();">
-
+         <div style="line-height:200%;">
 
     </form>
     </div>
@@ -192,7 +195,7 @@
     <!--- Filtering the data: drop downthat allows user to pick genre -->
     <div class = "Filter_section">
     <div id = "current" class = "location_message"> </div>
-    <div class = "genre_message"><b>Select to Filter by Genre:</b></div>
+    <div class = "genre_message"><b> filter by genre</b></div>
     
     <div class = "select_box">
     <select id="select" class = "select-filter">
