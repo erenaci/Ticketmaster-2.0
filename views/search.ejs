@@ -10,9 +10,9 @@
 
     <style>
         .input {
-            font-family: Copperplate;
+            font-family: system-ui;
             font-weight: bold;
-            color: white; 
+            color: #CD5C5C; 
             text-align: center;
             font-size: 50px;
         }
@@ -32,7 +32,8 @@
   
         #submit:hover {
             border: none;
-            background: #696969;
+            background: #DDA0DD;
+            cursor: pointer;
         }
         input[type=text] {
             width: 180px;
@@ -95,14 +96,17 @@
     }
     .filter:hover {
         border: none;
-        background: #696969;
+        background: #DDA0DD;
     }
     
     .location_message {
       color: #fadadd;
       font-family: Copperplate;
       font-weight: bold;
-      font-size: 20px;
+      font-size: 40px;
+      padding-bottom: 15px;
+      -webkit-text-stroke-width: 0.7px;
+      -webkit-text-stroke-color: black;
     }
     
     #select {
@@ -114,17 +118,17 @@
       cursor: pointer;
     }
     
-    .location_message {
-      font-size: 40px;
-      padding-bottom: 15px;
-    }
+
     
     .select_box {
       display: inline-flex;
     }
     
     .genre_message {
-      font-size: 20px;
+      font-size: 24px;
+      color: white;
+      -webkit-text-stroke-width: 0.2px;
+      -webkit-text-stroke-color: black;
     }
     </style>
 
@@ -188,7 +192,7 @@
     <!--- Filtering the data: drop downthat allows user to pick genre -->
     <div class = "Filter_section">
     <div id = "current" class = "location_message"> </div>
-    <div class = "genre_message"><b><em>Select to Filter by Genre:</em></b></div>
+    <div class = "genre_message"><b>Select to Filter by Genre:</b></div>
     
     <div class = "select_box">
     <select id="select" class = "select-filter">

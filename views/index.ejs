@@ -12,7 +12,8 @@
         .input {
             font-family: system-ui;
             font-weight: bold;
-            color: white;
+            color: #CD5C5C;
+            /* color: white */
             text-align: center;
             font-size: 50px;
         }
@@ -31,7 +32,8 @@
         }
         #submit:hover {
             border: none;
-            background: #696969;
+            background: #DDA0DD;
+            cursor: pointer;
         }
         input[type=text] {
             width: 180px;
@@ -102,7 +104,7 @@
 
     <div class = "input">
       <h2>
-        <span>Welcome <%= data.name.Username %> </span>
+        <span>Welcome <%= data.name.Username %>!</span>
       </h2>
    
     <form name="formInput" action = '/search' method = "POST" >
@@ -122,9 +124,13 @@
         </div>
         <input type="submit" value="Search" id="submit" onsubmit="loadData();tableContent();filter_genre();">
 
-
+    <br>
+    <br>
     </form>
     <h2> Recent City Searches </h2>
+    <div style="line-height:40%;">
+        <br>
+    </div>
 
       <div class="cities_list">
         <!-- Loop through quotes -->
