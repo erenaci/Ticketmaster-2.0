@@ -11,6 +11,7 @@ var table = document.createElement("table");
 
 
 function loadData(city_to_search) {
+    console.log("toSearch is: ", city_to_search);
     document.getElementById("current").innerHTML = "Music events in " + city_to_search + ":"; 
     var api_url =  "https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&city=";
     var api_key = "&apikey=IRf1McTms041EqaYu7WMVAtq6JuW4WQd";
