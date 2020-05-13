@@ -3,8 +3,10 @@ var bodyParser=require("body-parser");
 
 
 const MongoClient = require('mongodb').MongoClient;
-var url = "mongodb+srv://andreafoo11:andreafoo@cluster0-blvfe.mongodb.net/test?\
-          retryWrites=true&w=majority";
+// var url = "mongodb+srv://andreafoo11:andreafoo@cluster0-blvfe.mongodb.net/test?\
+//           retryWrites=true&w=majority";
+var url = "mongodb+srv://erenaci:ljmSt65s48IulZUf@cluster0-bny5d.mongodb.net/test?\
+              retryWrites=true&w=majority";
 var app = express();
 var adr = require('url');
 const path = require('path');
